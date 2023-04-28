@@ -2,12 +2,13 @@
 
 const cell = document.querySelector("table");
 const change = document.querySelector("select")
+const clear = document.getElementById("clear")
+const child = document.querySelectorAll("#grid TD")
 
 let chosenColor = "red"
 
 
 cell.addEventListener ('click', colorize)
-
 
 
 change.addEventListener ("change", function (event){
@@ -21,6 +22,8 @@ cell.addEventListener("mouseup", (event) => {
 
 })
 
+clear.addEventListener("click", clearCells)
+
 function colorize(event){
     const target = event.target
     if(target.tagName ==="TD")
@@ -33,3 +36,10 @@ function colorize(event){
     }   
 }
 
+function clearCells(event){
+    let x = child[1].getAttribute("className")
+    console.log(x)
+  for (let i = 0; i < child.length; i++){
+    
+  }
+}
