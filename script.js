@@ -1,8 +1,22 @@
 // Your code here
 
-const cellClick = document.querySelectorAll ("table");
+const cellClick = document.querySelector("table");
+const change = document.querySelector("select")
 
-table.addEventListener ('cellClick', colorize)
-{
-    console.log("I've been clicked");
+let chosenColor = "red"
+
+
+cellClick.addEventListener ('click', colorize)
+
+change.addEventListener ("change", function (event){
+    chosenColor = event.target.value
+})
+
+function colorize(event){
+    const target = event.target
+    if (target.className === chosenColor){
+        target.className = ""
+    } else {
+        target.className = chosenColor
+    }
 }
