@@ -14,9 +14,12 @@ change.addEventListener ("change", function (event){
 
 function colorize(event){
     const target = event.target
-    if (target.className === chosenColor){
-        target.className = ""
-    } else {
-        target.className = chosenColor
-    }
+    if(event.target.tagName ==="td")
+    {
+        if (target.className === chosenColor){
+            target.className = ""
+        } else {
+            target.className = chosenColor
+        }
+    }   
 }
